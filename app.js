@@ -6,8 +6,11 @@ const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 
-const index = require('./routes/index')
-const users = require('./routes/users')
+// const index = require('./routes/index')
+// const users = require('./routes/users')
+// 连接数据库
+const mongoose = require('./connect')
+// const article = require('./controller/article')
 
 // error handler
 onerror(app)
@@ -33,7 +36,9 @@ app.use(async (ctx, next) => {
 })
 
 // routes
-app.use(index.routes(), index.allowedMethods())
-app.use(users.routes(), users.allowedMethods())
+require('./routes')(app)
+// app.use(index.routes(), index.allowedMethods())
+// app.use(users.routes(), users.allowedMethods())
+// app.use(article.routes(), article.allowedMethods())
 
 module.exports = app
