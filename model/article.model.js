@@ -16,6 +16,7 @@ let ArticleSchema = new Schema({
 		unique: true
 	},
 	content:String,
+	excerpt:String,
 	//存储文章所用到的图片
 	images:{
 		type:Array
@@ -70,7 +71,8 @@ ArticleSchema
       'visit_count': this.visit_count,
       'comment_count':this.comment_count,
       'like_count':this.like_count,
-      'publish_time': this.publish_time
+      'publish_time': this.publish_time,
+      'content': this.content
     }
   })
 

@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 // 连接数据库.
 // mongoose.connect(config.mongo.uri, config.mongo.options)
 // 链接数据库
-mongoose.connect('mongodb://123.207.172.26:27018/wsd');
+mongoose.connect('mongodb://47.93.231.75:27017/shudong');
 mongoose.connection.on('connected',function(){
   console.log("MongoDB connected success.")
 })

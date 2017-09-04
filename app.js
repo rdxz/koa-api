@@ -10,7 +10,7 @@ const logger = require('koa-logger')
 // const users = require('./routes/users')
 // 连接数据库
 const mongoose = require('./connect')
-// const article = require('./controller/article')
+const article = require('./controller/article')
 
 // error handler
 onerror(app)
@@ -35,10 +35,11 @@ app.use(async (ctx, next) => {
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 })
 
+require('./config/koa')(app)
 // routes
 require('./routes')(app)
 // app.use(index.routes(), index.allowedMethods())
 // app.use(users.routes(), users.allowedMethods())
-// app.use(article.routes(), article.allowedMethods())
+app.use(article.routes(), article.allowedMethods())
 
 module.exports = app
