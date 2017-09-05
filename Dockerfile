@@ -15,4 +15,4 @@ EXPOSE 3001
 #RUN npm config set registry https://registry.npm.taobao.org
 
 RUN npm install
-CMD ["npm", "start"]
+CMD ["npm","run","pm2-start"]
