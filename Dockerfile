@@ -1,4 +1,5 @@
-FROM node:8.2.1
+# FROM node:8.2.1
+FROM       jackhu/jenkins-deploy-nodejs:7
 MAINTAINER stark.wang
 
 ENV NODE_ENV=production
