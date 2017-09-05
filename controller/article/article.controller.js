@@ -15,6 +15,8 @@ exports.addArticle = async (ctx,next) => {
 	const excerpt = content.substr(0, 140);
 	// const status = ctx.request.body.status
 	const title = ctx.request.body.title
+	// console.log(ctx.request.body.);
+	console.log(title);
 	let error_msg
 	if(!title){
 		error_msg = '标题不能为空.'
@@ -27,6 +29,7 @@ exports.addArticle = async (ctx,next) => {
 	}
 	// 添加摘要
 	ctx.request.body.excerpt = excerpt;
+	console.log(ctx.request.body);
 	//将图片提取存入images,缩略图调用
 	// ctx.request.body.images = tools.extractImage(content)
 	try{
