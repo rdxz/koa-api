@@ -16,6 +16,7 @@ function checkCaptcha() {
       if(!ctx.request.body.captcha){
         error_msg = '验证码不能为空.'
       }else if(ctx.session.captcha !== ctx.request.body.captcha.toLowerCase()){
+      	console.log(ctx.session.captcha);
       	// console.log(ctx.session.captcha,ctx.request.body.captcha);
         error_msg = '验证码错误.'
       }else if(ctx.request.body.email === '' || ctx.request.body.password === ''){
